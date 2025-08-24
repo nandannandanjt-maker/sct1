@@ -1,0 +1,263 @@
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delight</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s, box-shadow 0.3s;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: #111;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff5722;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff5722;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: url('https://picsum.photos/id/292/1600/900') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* About */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    /* Menu Section */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .menu-item h3 {
+      margin: 15px 0 10px;
+      color: #333;
+    }
+
+    .menu-item p {
+      padding: 0 10px 15px;
+      color: #555;
+    }
+
+    /* Contact */
+    #contact p {
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="logo">Food Delight</div>
+    <div class="menu-toggle">&#9776;</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero" id="home">
+    <div>
+      <h1>Delicious Food, Anytime</h1>
+      <p>Experience the taste of happiness</p>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Food Delight, we serve fresh and delicious meals made with love. Our chefs craft each dish with passion and authenticity.</p>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu">
+      <div class="menu-item">
+        <img src="https://picsum.photos/id/1080/600/400" alt="Pizza">
+        <h3>Cheese Pizza</h3>
+        <p>Loaded with fresh mozzarella and tangy tomato sauce.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://picsum.photos/id/292/600/400" alt="Burger">
+        <h3>Beef Burger</h3>
+        <p>Juicy beef patty with lettuce, tomato, and secret sauce.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://picsum.photos/id/1025/600/400" alt="Pasta">
+        <h3>Creamy Pasta</h3>
+        <p>Pasta tossed in creamy Alfredo sauce and parmesan.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://picsum.photos/id/1081/600/400" alt="Salad">
+        <h3>Fresh Salad</h3>
+        <p>A mix of fresh veggies with a zesty dressing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@fooddelight.com</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Food Delight | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Scroll effect
+    window.addEventListener("scroll", function() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
+;
+     
